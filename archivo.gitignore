@@ -1,0 +1,12 @@
+# Ejecutables compilados por el compilador
+*.exe
+*.dll
+*.o
+*.obj
+
+# Archivos de datos locales y pruebas
+servidor_red/datos/archivo.db
+servidor_red/datos/usuarios.dat
+
+# Carpetas ocultas de configuración de entornos
+.vscode/
