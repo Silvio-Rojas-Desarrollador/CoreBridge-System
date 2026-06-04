@@ -79,11 +79,4 @@ servidor_hibrido/
 **Estado del Proyecto:** Fase de Planeación (Híbrido v2.0)  
 **Lead Architect:** Senior Elite Engineer / MIT Standard
 ```
-
-He estructurado este plano para que el `servidor_broker` (que ya tienes avanzado) no necesite cambios drásticos, sino que se convierta en el motor que alimenta la web. La separación en capas nos permitirá escalar el frontend sin poner en riesgo la integridad de la base de datos en C.
-
-¿Qué te parece la estructura de carpetas propuesta para `servidor_web`? ¿Deseas que profundicemos en el sub-módulo `bridge/` que hará la traducción binaria?
-
-<!--
-[PROMPT_SUGGESTION]Define los requerimientos técnicos del sub-módulo bridge para conectar el servidor web con el broker en C.[/PROMPT_SUGGESTION]
 [PROMPT_SUGGESTION]¿Qué tecnología de servidor web (Node.js, Go o C con Mongoose) se adapta mejor a nuestra estructura de PacketRed?[/PROMPT_SUGGESTION]
