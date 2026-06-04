@@ -1,0 +1,304 @@
+/*
+ * STYLES.CSS - Estilos Industriales para el Gateway Web
+ * Diseño minimalista y funcional, optimizado para la visualización de datos.
+ */
+
+/* --- 1. Variables y Resets Globales --- */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --dark-bg: #212529;
+    --light-bg: #f8f9fa;
+    --card-bg: #343a40;
+    --text-color: #e9ecef;
+    --border-color: #495057;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- 2. Utilidades --- */
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-header h1 {
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+    margin-bottom: 10px;
+}
+
+.card-header p {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--info-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.error-msg {
+    color: var(--danger-color);
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid var(--danger-color);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* --- 3. Formularios --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #2c3034;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: 1em;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary, .btn-outline, .btn-danger {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    border: 1px solid var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* --- 4. Dashboard y Tabla de Datos --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-header h2 {
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+}
+
+.main-header .header-actions button {
+    margin-left: 10px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: #2c3034;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+table tbody tr:hover {
+    background-color: #3a4047;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--info-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 10px;
+    background-color: #495057;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--success-color);
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-bar + span {
+    font-size: 0.8em;
+    color: var(--text-color);
+}
+
+.empty-msg {
+    text-align: center;
+    color: var(--secondary-color);
+    padding: 20px;
+}
+
+/* --- 5. Footer de Estado --- */
+.status-bar {
+    background-color: #1a1d20;
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* --- 6. Responsive Design Básico --- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-header .header-actions {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-header .header-actions button {
+        margin: 0 5px;
+        flex-grow: 1;
+    }
+}

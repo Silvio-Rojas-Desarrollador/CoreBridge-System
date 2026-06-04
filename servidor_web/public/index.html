@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway Industrial | Panel de Control Híbrido</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts para un look profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 1. SECCIÓN DE AUTENTICACIÓN -->
+        <section id="login-view" class="container">
+            <div class="card login-card">
+                <div class="card-header">
+                    <span class="badge">SISTEMA HÍBRIDO v1.0</span>
+                    <h1>Acceso al Gateway</h1>
+                    <p>Autenticación mediante Broker Central (C/C++)</p>
+                </div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Identificador de Usuario</label>
+                        <input type="text" id="username" required autocomplete="off" placeholder="Ej: admin">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Clave de Seguridad</label>
+                        <input type="password" id="password" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" id="btn-login" class="btn-primary">Establecer Enlace</button>
+                </form>
+                <div id="login-error" class="error-msg hidden"></div>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN DEL PANEL DE DATOS (HIDDEN BY DEFAULT) -->
+        <section id="dashboard-view" class="container hidden">
+            <header class="main-header">
+                <div class="header-info">
+                    <h2>Monitor de Estudiantes</h2>
+                    <p id="session-info">Conectado como: <span id="user-display">---</span></p>
+                </div>
+                <div class="header-actions">
+                    <button id="btn-refresh" class="btn-outline">Sincronizar Datos</button>
+                    <button id="btn-logout" class="btn-danger">Desconectar</button>
+                </div>
+            </header>
+
+            <div class="data-grid">
+                <div class="card table-card">
+                    <div class="table-responsive">
+                        <table id="students-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre del Estudiante</th>
+                                    <th>Edad</th>
+                                    <th>Curso</th>
+                                    <th>Turno</th>
+                                    <th>Asistencia</th>
+                                </tr>
+                            </thead>
+                            <tbody id="students-body">
+                                <!-- Los datos se inyectarán mediante app.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="status-bar">
+                <span class="status-dot"></span> Modo: Solo Lectura | Canal TCP: Activo
+            </footer>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
