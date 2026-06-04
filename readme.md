@@ -74,8 +74,3 @@ servidor_hibrido/
 4. El Gateway envía el bloque de bytes vía socket TCP al `servidor_broker`.
 5. El `servidor_broker` ejecuta la transacción en SQLite y responde con `ESTADO_EXITO`.
 6. El Gateway recibe los bytes, los transforma a JSON y responde al navegador con código 201.
-
----
-**Estado del Proyecto:** Fase de Planeación (Híbrido v2.0)  
-**Lead Architect:** Senior Elite Engineer / MIT Standard
-```
